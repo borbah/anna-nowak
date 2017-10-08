@@ -1,6 +1,12 @@
 (function() {
     'use strict';
 
+    $('body').imagesLoaded()
+        .done( function() {
+            console.log('all images are loaded');
+            $('.loading').css({ display: 'none' })
+        });
+
     var currentPage = null;
     var home = 'home',
         dance_artist = 'dance_artist',
@@ -17,7 +23,7 @@
     function pageLoad(page) {
         var url = page +'.html';
 
-        $('.wrapper').load("../subsites/" + url, function() {
+        $('.wrapper').load("./subsites/" + url, function() {
             currentPage = page;
             var vh = window.innerHeight;
             $('.heroimage').height(vh);
