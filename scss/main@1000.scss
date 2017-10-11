@@ -1,4 +1,47 @@
 @media (min-width: 1000px) {
+  .menu__overlay {
+    position: absolute;
+    display: block;
+    width: 290px;
+    height: 290px;
+    clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
+    background: url('../assets/img/sequence/seq_1.jpg') no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    opacity: 1;
+  }
+
+  .menu__overlay:hover::before {
+    top: calc(-55px - 200px);
+  }
+
+  .menu__overlay:hover::after {
+    top: calc(145px + 200px);
+  }
+
+  .menu__overlay::before, .menu__overlay::after {
+    transition: .6s ease-in-out .1s;
+    background: $bgcolor;
+  }
+
+  .menu__overlay::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: -55px;
+  }
+
+  .menu__overlay::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 145px;
+  }
+
   .menu__items {
     width: 70%;
     flex-direction: row;
