@@ -13,12 +13,23 @@
         choreographer = 'choreographer',
         educator = 'educator',
         on_the_move = 'on_the_move';
+    var isMobile = window.innerWidth < 1000;
 
     // hamburger toggle
     $('.header__hamburger').on('click', function() {
        $(this).toggleClass('header__hamburger--open');
        $('.menu').toggleClass('menu--open');
     });
+
+
+    // menu background change
+    $('.items__item').hover(function() {
+        $('.menu__overlay').addClass('menu__overlay--dance_artist');
+    }, function() {
+        $('.menu__overlay').removeClass('menu__overlay--dance_artist');
+    });
+
+
 
     function pageLoad(page) {
         var url = page +'.html';

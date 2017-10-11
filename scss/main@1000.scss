@@ -1,0 +1,53 @@
+@media (min-width: 1000px) {
+  .menu__items {
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .items__item {
+    margin: 0;
+    position: relative;
+    z-index: 99;
+  }
+
+  .heroimage {
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .heroimage__text {
+    position: relative;
+    right: 150px;
+    margin: 0;
+    width: 180px;
+    text-align: left;
+
+    h1 {
+      @include textspace(25px, 1.2);
+    }
+
+    p {
+      @include textspace(14px, 1.4);
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .menu__items {
+    width: 50%;
+  }
+
+  .heroimage__text {
+    right: 250px;
+    width: 200px;
+
+    h1 {
+      @include textspace(30px, 1.2);
+    }
+
+    p {
+      @include textspace(16px, 1.4);
+    }
+  }
+}
