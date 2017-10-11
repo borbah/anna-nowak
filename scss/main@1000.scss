@@ -2,45 +2,38 @@
   .menu__overlay {
     position: absolute;
     display: block;
-    width: 290px;
-    height: 290px;
+    width: 390px;
+    height: 390px;
     clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
+    opacity: 0;
+    transition: .16s;
     background: url('../assets/img/sequence/seq_1.jpg') no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+  }
+
+  .menu__overlay--visible {
     opacity: 1;
   }
 
-  .menu__overlay:hover::before {
-    top: calc(-55px - 200px);
-  }
-
-  .menu__overlay:hover::after {
-    top: calc(145px + 200px);
-  }
-
-  .menu__overlay::before, .menu__overlay::after {
-    transition: .6s ease-in-out .1s;
+  .overlay__curtain {
+    width: 100%;
+    height: 50%;
     background: $bgcolor;
+    display: block;
+    opacity: 1;
+    transition: .1s ease-in .1s;
   }
 
-  .menu__overlay::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 400px;
-    height: 200px;
-    top: -55px;
+  .overlay__curtain--up {
+    transform: translateY(-100%);
   }
 
-  .menu__overlay::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 400px;
-    height: 200px;
-    top: 145px;
+  .overlay__curtain--down {
+    transform: translateY(100%);
   }
+
+
 
   .menu__items {
     width: 70%;

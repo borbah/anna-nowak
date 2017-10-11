@@ -4,7 +4,7 @@
     $('body').imagesLoaded()
         .done( function() {
             console.log('all images are loaded');
-            $('.loading').css({ display: 'none' })
+            $('.loading').css({ display: 'none' });
         });
 
     var currentPage = null;
@@ -24,9 +24,19 @@
 
     // menu background change
     $('.items__item').hover(function() {
-        $('.menu__overlay').addClass('menu__overlay--dance_artist');
+        var backgroundImage = $(this).attr("data-name");
+        console.log('backgroundImage', backgroundImage);
+        var index = $(this).index() + 1;
+        var quarter = window.innerWidth/8;
+        $('.menu__overlay').addClass('menu__overlay--visible');
+        $('.overlay__curtain:nth-child(1)').addClass('overlay__curtain--up');
+        $('.overlay__curtain:nth-child(2)').addClass('overlay__curtain--down');
+        $('.menu__overlay').css({"background-image": "url('../assets/img/menu_backgrounds/menu__" + backgroundImage + ".jpg')"});
+        $('.menu__overlay').offset({left: quarter*index});
     }, function() {
-        $('.menu__overlay').removeClass('menu__overlay--dance_artist');
+        $('.menu__overlay').removeClass('menu__overlay--visible');
+        $('.overlay__curtain:nth-child(1)').removeClass('overlay__curtain--up');
+        $('.overlay__curtain:nth-child(2)').removeClass('overlay__curtain--down');
     });
 
 
