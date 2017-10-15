@@ -1,7 +1,7 @@
 @media (min-width: 1000px) {
 
   /* Heroimage - home page sequence */
-  .heroimage::after{
+  .heroimage--home::after{
     position: absolute; width:0; height:0; overflow:hidden; z-index:-1;
     content: url('../assets/img/sequence/seq_1.jpg') url('../assets/img/sequence/seq_2.jpg') url('../assets/img/sequence/seq_3.jpg') url('../assets/img/sequence/seq_4.jpg') url('../assets/img/sequence/seq_5.jpg') url('../assets/img/sequence/seq_6.jpg') url('../assets/img/sequence/seq_7.jpg') url('../assets/img/sequence/seq_8.jpg') url('../assets/img/sequence/seq_9.jpg') url('../assets/img/sequence/seq_10.jpg') url('../assets/img/sequence/seq_11.jpg') url('../assets/img/sequence/seq_12.jpg') url('../assets/img/sequence/seq_13.jpg') url('../assets/img/sequence/seq_14.jpg') url('../assets/img/sequence/seq_15.jpg') url('../assets/img/sequence/seq_16.jpg');
   }

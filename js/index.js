@@ -4,7 +4,7 @@
     $('body').imagesLoaded()
         .done( function() {
             console.log('all images are loaded');
-            $('.loading').css({ display: 'none' })
+            $('.loading').css({ display: 'none' });
         });
 
     var currentPage = null;
@@ -21,14 +21,24 @@
        $('.menu').toggleClass('menu--open');
     });
 
-
     // menu background change
     $('.items__item').hover(function() {
-        $('.menu__overlay').addClass('menu__overlay--dance_artist');
+        var backgroundImage = $(this).attr("data-name");
+        $('.menu__overlay').css({"background-image": "url('./assets/img/menu_backgrounds/menu__" + backgroundImage + ".jpg')"});
     }, function() {
-        $('.menu__overlay').removeClass('menu__overlay--dance_artist');
+        $('.menu__overlay').css({"background-image": "url('./assets/img/menu_backgrounds/menu__main.jpg"});
     });
 
+    // rellax props
+    function addRellaxProps() {
+        if(!isMobile) {
+            $('.single__photo').addClass('rellax');
+            $('.single__sidetext').addClass('rellax')
+                .css({transform: 'rotate(-90deg)'})
+                .attr('data-rellax-percentage', '-1.5');
+
+        }
+    }
 
 
     function pageLoad(page) {
@@ -46,6 +56,16 @@
                         currentSlice = (ev.pageX / oneSixteen);
                     $('.heroimage--home').attr('class', 'heroimage heroimage--home imgAdd');
                     $('.heroimage--home').addClass('imgAdd img--' + ( Math.floor(currentSlice) + 1 ));
+                });
+            }
+
+            addRellaxProps();
+
+            if (currentPage !== home) {
+                var rellax = new Rellax('.rellax', {
+                    speed: 1.2,
+                    center: false,
+                    round: true
                 });
             }
         });

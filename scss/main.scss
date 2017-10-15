@@ -121,7 +121,7 @@ body {
 
 /* Header */
 .header {
-  z-index: 2;
+  z-index: 9999;
   width: 100%;
   margin: 0;
   padding: 25px;
@@ -239,3 +239,5 @@ body {
 @import "main@1000";
 @import "subsite__home";
 @import "subsite__home@1000";
+@import "subsite__dance-artist";
+@import "subsite__dance-artist@1000";
